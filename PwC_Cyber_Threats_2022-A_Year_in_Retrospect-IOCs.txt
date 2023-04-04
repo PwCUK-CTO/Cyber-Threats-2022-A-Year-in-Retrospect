@@ -1,0 +1,17 @@
+# Dark Crystal RAT URI formats
+\.php\?type=__ds_setdata&__ds_setdata_user=[a-f0-9]{40}&__ds_setdata_ext=[a-f0-9]{32}&__ds_setdata_data=
+\.php\?type=__ds_getdata&__ds_getdata_user=[a-f0-9]{40}&__ds_getdata_ext=[a-f0-9]{32}&__ds_getdata_key=[a-f0-9]{32}$
+# White Dev 140
+https[:]//product808[.]godaddysites[.]com/purchase-order # 2022
+https[:]//support-domaill[.]godaddysites[.]com/ukr # 2022
+https[:]//shipping8[.]godaddysites[.]com/dhl # 2022
+https[:]//servicesagreement[.]godaddysites[.]com/update # 2022
+https[:]//support-ukr[.]godaddysites[.]com/log-in # 2022
+https[:]//ukrverifikaciyaakkaunta[.]godaddysites[.]com/privacy-policy # Phishing URL May 2022
+https[:]//deutschepost[.]godaddysites[.]com/login # Phishing URL October 2022
+# Blue Dev 5
+198.244.224[.]89 # Seen July 2022
+193.8.172[.]208 # Seen July 2021 through August 2021
+18.130.157[.]66 # Seen in July 2021
+18.169.208[.]15 # Seen January 2022 through February 2022
+79.143.87[.]14 # Seen in March 2022202

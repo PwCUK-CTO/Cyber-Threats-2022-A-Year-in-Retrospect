@@ -1,0 +1,29 @@
+alert dns any any -> any any (msg:"[PwC] Generic - CobaltStrike - DNS query for .stage."; \
+    dns_query; content:".stage."; \
+    pcre:"/^[a-z]{3}\.stage\.[0-9]+\.(?:[a-z0-9-]+\.)+[a-z]{2,4}$/"; \
+    classtype:domain-c2; \
+    metadata:copyright,Copyright PwC Threat Intelligence 2017; metadata:tlp green; \
+    metadata:confidence Medium; metadata:efficacy Medium; \
+    metadata:mitre,T1071/004; \
+    metadata:author RM; metadata:created 2020-07-07; \
+    sid:200100001; rev:2020070701;)
+alert dns any any -> any any (msg:"[PwC] Generic - Brute Ratel - C2 node evasionlabs[.]com in DNS query"; \
+    dns.query; content:".evasionlabs.com"; endswith; \
+    threshold: type limit, track by_src, count 1, seconds 3600; \
+    classtype:domain-c2; \
+    metadata:copyright,Copyright PwC Threat Intelligence 2022; \
+    metadata:tlp green; metadata:confidence High; metadata:efficacy Low; \
+    metadata:mitre,T1071/004; \
+    metadata:author RM; metadata:created 2022-09-29; \
+    sid:222092910; rev:2022092901;)
+alert udp any any -> any any (msg:"[PwC] Policy - Tunnelling - Wireguard VPN client handshake"; flow:from_client; dsize:148; \
+    content:"|01 00 00 00|"; startswith; \
+    content:"|00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00|"; endswith; \
+    flowbits:set,PwC.Policy.Tunnelling.Wireguard; target:src_ip; \
+    reference:md5,b82a587befc34c0db00eed5c4117d88d343b8b895f03fc409a55d9240cf9fde1; \
+    classtype:pup-activity; \
+    metadata:copyright,Copyright PwC Threat Intelligence 2022; metadata:tlp green; \
+    metadata:confidence High; metadata:efficacy Low; \
+    metadata:mitre,T1133; \
+    metadata:author RM; metadata:created 2022-05-04; \
+    sid:222050432; rev:2022050401;)
